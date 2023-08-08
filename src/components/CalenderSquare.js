@@ -14,11 +14,22 @@ export default function CalenderSquare(props) {
       >
         {props.date}
       </h5>
-      <img src={wmo_codes[props.weathercode]?.day.image} />
-      <h2>{wmo_codes[props.weathercode]?.day.description}</h2>
+      <img src={wmo_codes[props.data.weathercode[props.date - 1]]?.day.image} />
       <h2>
-        {props.high_tmp} / {props.low_tmp}
+        {wmo_codes[props.data.weathercode[props.date - 1]]?.day.description}
       </h2>
+      <h2>
+        {props.data.temperature_2m_max[props.date - 1]}F /{" "}
+        {props.data.temperature_2m_min[props.date - 1]}F
+      </h2>
+      {props.data.snowfall_sum[props.date - 1] > 0.5 ? (
+        <h2 style={{ fontWeight: "100", fontSize: "1.2em", marginTop: 0 }}>
+          {Math.round(props.data.snowfall_sum[props.date - 1] * 100) / 100}in
+          snow
+        </h2>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

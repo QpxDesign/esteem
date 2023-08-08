@@ -3,10 +3,8 @@ import Geocode from "react-geocode";
 import CalenderSquare from "./CalenderSquare";
 
 export default function Calender() {
-  const [lowTemperatures, setLowTemperatures]: any = useState([]);
-  const [highTemperatures, setHighTemperatures]: any = useState([]);
+  const [data, setData]: any = useState({});
 
-  const [weathercodes, setWeathercodes]: any = useState([]);
   const [month, setMonth]: any = useState("01"); // FORMAT: JANUARAY = 01
   const [year, setYear]: any = useState("2022");
 
@@ -35,9 +33,8 @@ export default function Calender() {
           )
             .then((r3) => r3.json())
             .then((r4: any) => {
-              setWeathercodes(r4.daily?.weathercode);
-              setLowTemperatures(r4.daily.temperature_2m_min);
-              setHighTemperatures(r4.daily.temperature_2m_max);
+              console.log(r4.daily);
+              setData(r4.daily);
             });
         }
       });
@@ -176,203 +173,48 @@ export default function Calender() {
         Showing Results for: {geolocatedCity}
       </h3>
       <div className="cal-row">
-        <CalenderSquare
-          date={"1"}
-          weathercode={weathercodes[0]}
-          high_tmp={highTemperatures[0]}
-          low_tmp={lowTemperatures[0]}
-        />
-        <CalenderSquare
-          date={"2"}
-          weathercode={weathercodes[1]}
-          high_tmp={highTemperatures[1]}
-          low_tmp={lowTemperatures[1]}
-        />
-        <CalenderSquare
-          date={"3"}
-          weathercode={weathercodes[2]}
-          high_tmp={highTemperatures[2]}
-          low_tmp={lowTemperatures[2]}
-        />
-        <CalenderSquare
-          date={"4"}
-          weathercode={weathercodes[3]}
-          high_tmp={highTemperatures[3]}
-          low_tmp={lowTemperatures[3]}
-        />
-        <CalenderSquare
-          date={"5"}
-          weathercode={weathercodes[4]}
-          high_tmp={highTemperatures[4]}
-          low_tmp={lowTemperatures[4]}
-        />
-        <CalenderSquare
-          date={"6"}
-          weathercode={weathercodes[5]}
-          high_tmp={highTemperatures[5]}
-          low_tmp={lowTemperatures[5]}
-        />
-        <CalenderSquare
-          date={"7"}
-          weathercode={weathercodes[6]}
-          high_tmp={highTemperatures[6]}
-          low_tmp={lowTemperatures[6]}
-        />
+        <CalenderSquare date={"1"} data={data} />
+        <CalenderSquare date={"2"} data={data} />
+        <CalenderSquare date={"3"} data={data} />
+        <CalenderSquare date={"4"} data={data} />
+        <CalenderSquare date={"5"} data={data} />
+        <CalenderSquare date={"6"} data={data} />
+        <CalenderSquare date={"7"} data={data} />
       </div>
       <div className="cal-row">
-        <CalenderSquare
-          date={"8"}
-          weathercode={weathercodes[7]}
-          high_tmp={highTemperatures[7]}
-          low_tmp={lowTemperatures[7]}
-        />
-        <CalenderSquare
-          date={"9"}
-          weathercode={weathercodes[8]}
-          high_tmp={highTemperatures[8]}
-          low_tmp={lowTemperatures[8]}
-        />
-        <CalenderSquare
-          date={"10"}
-          weathercode={weathercodes[9]}
-          high_tmp={highTemperatures[9]}
-          low_tmp={lowTemperatures[9]}
-        />
-        <CalenderSquare
-          date={"11"}
-          weathercode={weathercodes[10]}
-          high_tmp={highTemperatures[10]}
-          low_tmp={lowTemperatures[10]}
-        />
-        <CalenderSquare
-          date={"12"}
-          weathercode={weathercodes[11]}
-          high_tmp={highTemperatures[11]}
-          low_tmp={lowTemperatures[11]}
-        />
-        <CalenderSquare
-          date={"13"}
-          weathercode={weathercodes[12]}
-          high_tmp={highTemperatures[12]}
-          low_tmp={lowTemperatures[12]}
-        />
+        <CalenderSquare date={"8"} data={data} />
+        <CalenderSquare date={"9"} data={data} />
+        <CalenderSquare date={"10"} data={data} />
+        <CalenderSquare date={"11"} data={data} />
+        <CalenderSquare date={"12"} data={data} />
+        <CalenderSquare date={"13"} data={data} />
 
-        <CalenderSquare
-          date={"14"}
-          weathercode={weathercodes[13]}
-          high_tmp={highTemperatures[13]}
-          low_tmp={lowTemperatures[13]}
-        />
+        <CalenderSquare date={"14"} data={data} />
       </div>
       <div className="cal-row">
-        <CalenderSquare
-          date={"15"}
-          weathercode={weathercodes[14]}
-          high_tmp={highTemperatures[14]}
-          low_tmp={lowTemperatures[14]}
-        />
-        <CalenderSquare
-          date={"16"}
-          weathercode={weathercodes[15]}
-          high_tmp={highTemperatures[15]}
-          low_tmp={lowTemperatures[15]}
-        />
-        <CalenderSquare
-          date={"17"}
-          weathercode={weathercodes[16]}
-          high_tmp={highTemperatures[16]}
-          low_tmp={lowTemperatures[16]}
-        />
-        <CalenderSquare
-          date={"18"}
-          weathercode={weathercodes[17]}
-          high_tmp={highTemperatures[17]}
-          low_tmp={lowTemperatures[17]}
-        />
-        <CalenderSquare
-          date={"19"}
-          weathercode={weathercodes[18]}
-          high_tmp={highTemperatures[18]}
-          low_tmp={lowTemperatures[18]}
-        />
-        <CalenderSquare
-          date={"20"}
-          weathercode={weathercodes[19]}
-          high_tmp={highTemperatures[19]}
-          low_tmp={lowTemperatures[19]}
-        />
+        <CalenderSquare date={"15"} data={data} />
+        <CalenderSquare date={"16"} data={data} />
+        <CalenderSquare date={"17"} data={data} />
+        <CalenderSquare date={"18"} data={data} />
+        <CalenderSquare date={"19"} data={data} />
+        <CalenderSquare date={"20"} data={data} />
 
-        <CalenderSquare
-          date={"21"}
-          weathercode={weathercodes[20]}
-          high_tmp={highTemperatures[20]}
-          low_tmp={lowTemperatures[20]}
-        />
+        <CalenderSquare date={"21"} data={data} />
       </div>
       <div className="cal-row">
-        <CalenderSquare
-          date={"22"}
-          weathercode={weathercodes[21]}
-          high_tmp={highTemperatures[21]}
-          low_tmp={lowTemperatures[21]}
-        />
-        <CalenderSquare
-          date={"23"}
-          weathercode={weathercodes[22]}
-          high_tmp={highTemperatures[22]}
-          low_tmp={lowTemperatures[22]}
-        />
-        <CalenderSquare
-          date={"24"}
-          weathercode={weathercodes[23]}
-          high_tmp={highTemperatures[23]}
-          low_tmp={lowTemperatures[23]}
-        />
-        <CalenderSquare
-          date={"25"}
-          weathercode={weathercodes[24]}
-          high_tmp={highTemperatures[24]}
-          low_tmp={lowTemperatures[24]}
-        />
-        <CalenderSquare
-          date={"26"}
-          weathercode={weathercodes[25]}
-          high_tmp={highTemperatures[25]}
-          low_tmp={lowTemperatures[25]}
-        />
-        <CalenderSquare
-          date={"27"}
-          weathercode={weathercodes[26]}
-          high_tmp={highTemperatures[26]}
-          low_tmp={lowTemperatures[256]}
-        />
+        <CalenderSquare date={"22"} data={data} />
+        <CalenderSquare date={"23"} data={data} />
+        <CalenderSquare date={"24"} data={data} />
+        <CalenderSquare date={"25"} data={data} />
+        <CalenderSquare date={"26"} data={data} />
+        <CalenderSquare date={"27"} data={data} />
 
-        <CalenderSquare
-          date={"28"}
-          weathercode={weathercodes[27]}
-          high_tmp={highTemperatures[27]}
-          low_tmp={lowTemperatures[27]}
-        />
+        <CalenderSquare date={"28"} data={data} />
       </div>
       <div className="cal-row">
-        <CalenderSquare
-          date={"29"}
-          weathercode={weathercodes[28]}
-          high_tmp={highTemperatures[28]}
-          low_tmp={lowTemperatures[28]}
-        />
-        <CalenderSquare
-          date={"30"}
-          weathercode={weathercodes[29]}
-          high_tmp={highTemperatures[29]}
-          low_tmp={lowTemperatures[29]}
-        />
-        <CalenderSquare
-          date={"31"}
-          weathercode={weathercodes[30]}
-          high_tmp={highTemperatures[30]}
-          low_tmp={lowTemperatures[30]}
-        />
+        <CalenderSquare date={"29"} data={data} />
+        <CalenderSquare date={"30"} data={data} />
+        <CalenderSquare date={"31"} data={data} />
       </div>
     </div>
   );
