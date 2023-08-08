@@ -15,15 +15,9 @@ export default function Calender() {
 
   const [geolocatedCity, setGeolocatedCity]: any = useState("");
   function getData() {
-    const url = `https://google-maps-geocoding.p.rapidapi.com/geocode/json?address=${city}&language=en`;
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "d7fdb67dd5msh8ac50feab49d441p12624ejsnc514b28c1cd5",
-        "X-RapidAPI-Host": "google-maps-geocoding.p.rapidapi.com",
-      },
-    };
-    fetch(url, options)
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=AIzaSyD5CJjZdOQuyqnnnKpbXWrHvyYspbVDzxo`;
+
+    fetch(url)
       .then((r) => r.json())
       .then((r2) => {
         if (
@@ -33,6 +27,7 @@ export default function Calender() {
           year < 1960
         ) {
           setError(true);
+          console.log("erro");
         } else {
           setGeolocatedCity(r2?.results[0].formatted_address);
           fetch(
