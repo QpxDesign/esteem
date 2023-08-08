@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <h1 style={{ fontFamily: "monospace", textAlign: "center" }}>
-        College Weather Explorer
+        Esteem: Historical Weather Data Explorer
       </h1>
       <Calender />
     </div>
