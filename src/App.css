@@ -43,3 +43,22 @@ button {
 button:hover {
   background-color: #ef4444;
 }
+.nav-button {
+  color:black;
+  background-color: #e2e8f0;
+  padding: .33em 1.25em;
+  border-radius:2.5em
+}
+.nav-button:hover {
+  background-color:#cbd5e1
+}
+.nav-button.active {
+  background-color: #f87171;
+  color:white;
+}
+.nav-button.active:hover {
+  background-color: #f87171;
+}
+* {
+  font-family: monospace
+}
