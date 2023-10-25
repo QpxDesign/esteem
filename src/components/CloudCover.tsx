@@ -6,7 +6,7 @@ export default function CloudCover() {
   const [geolocatedCity, setGeolocatedCity] = useState("")
   function getData() {
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=AIzaSyD5CJjZdOQuyqnnnKpbXWrHvyYspbVDzxo`;
-    if (geolocatedCity.length === 0)
+
     fetch(url)
       .then((r) => r.json())
       .then((r2) => {
@@ -24,7 +24,6 @@ export default function CloudCover() {
 
       });
   }
-
   return (
     <div>
       <div>
