@@ -1,27 +1,65 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Calender from "./components/Calender";
-import CloudCover from "./components/CloudCover"
+import CloudCover from "./components/CloudCover";
+import SnowTracker from "./components/SnowTracker";
 
 function App() {
-  const [page,setPage] = useState("Historical")
+  const [page, setPage] = useState("Historical");
   return (
     <div className="App">
       <h1 style={{ fontFamily: "monospace", textAlign: "center" }}>
         Esteem: Historical Weather Data Explorer
       </h1>
-      <div style={{display:'flex',justifyContent:"center",width:"100%",marginBottom:".5em"}}>
-      <button className={page === "Historical" ? "nav-button active" : "nav-button"} onClick={() => {
-        setPage("Historical")
-      }}>Historical</button>
-      <button className={page === "Cloud Cover" ? "nav-button active" : "nav-button"} onClick={() => {
-        setPage("Cloud Cover")
-      }}>Cloud Cover Forecast</button>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+          marginBottom: ".5em",
+          flexWrap: "wrap",
+        }}
+      >
+        <button
+          className={page === "Historical" ? "nav-button active" : "nav-button"}
+          onClick={() => {
+            setPage("Historical");
+          }}
+        >
+          Historical
+        </button>
+        <button
+          className={
+            page === "Cloud Cover" ? "nav-button active" : "nav-button"
+          }
+          onClick={() => {
+            setPage("Cloud Cover");
+          }}
+        >
+          Cloud Cover Forecast
+        </button>
+        <button
+          className={
+            page === "SnowTracker" ? "nav-button active" : "nav-button"
+          }
+          onClick={() => {
+            setPage("SnowTracker");
+          }}
+        >
+          SnowTracker
+        </button>
       </div>
-      {
-        page === "Historical" ? <Calender /> : <CloudCover />
-      }
+
+      {page === "Historical" ? (
+        <Calender />
+      ) : page === "Cloud Cover" ? (
+        <CloudCover />
+      ) : page === "SnowTracker" ? (
+        <SnowTracker />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
