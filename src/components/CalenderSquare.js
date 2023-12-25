@@ -2,6 +2,8 @@ import React from "react";
 import wmo_codes from "../assets/wmo-codes.json";
 export default function CalenderSquare(props) {
   if (
+    props === undefined ||
+    props.data === undefined ||
     props.data.weathercode === undefined ||
     props.data.temperature_2m_max === undefined ||
     props.data.temperature_2m_min === undefined ||
