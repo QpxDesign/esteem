@@ -45,7 +45,7 @@ export default function Blog() {
         <title>blog</title>
         <meta
           name="description"
-          content="see a curated collection of quinn's work, including his photography, graphic design and web development. quinn patwardhan is a creative and software developer based in washington, dc"
+          content="weather analysis and commentary for the Washington, DC Area and Beyond from a complete non-expert"
         />
       </Helmet>
       <div className="page-wrapper">
