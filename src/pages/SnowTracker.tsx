@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import LoadingText from "./LoadingText";
+import LoadingText from "../components/LoadingText";
 
 export default function SnowTracker() {
   const [data, setData]: any = useState([]);

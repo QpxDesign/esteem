@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Geocode from "react-geocode";
-import CalenderSquare from "./CalenderSquare";
+import CalenderSquare from "../components/CalenderSquare";
 
 export default function Calender() {
   const [data, setData]: any = useState({});
